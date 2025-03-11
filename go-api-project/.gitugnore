@@ -13,3 +13,5 @@ vendor/
 
 # Go workspace file
 go.work
+*.mob
+*.sum
