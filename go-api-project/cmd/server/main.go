@@ -17,10 +17,10 @@ func main() {
     r.Use(middleware.Recoverer)
 
     // Setup routes
-    routes.SetupRoutes()
+    r = routes.SetupRoutes()
 
     // Start the server
-    port := ":8080"
+    port := ":8088"
     log.Printf("Starting server on %s", port)
     if err := http.ListenAndServe(port, r); err != nil {
         log.Fatalf("Could not start server: %s\n", err)

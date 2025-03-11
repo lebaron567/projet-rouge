@@ -7,8 +7,8 @@ import (
 
 // HandleGet responds to GET requests with a simple message.
 func HandleGet(w http.ResponseWriter, r *http.Request) {
+    response := map[string]string{"message": "Bienvenue sur l'API Go !"}
     w.Header().Set("Content-Type", "application/json")
-    response := map[string]string{"message": "GET request successful"}
     json.NewEncoder(w).Encode(response)
 }
 

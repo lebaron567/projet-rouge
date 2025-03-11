@@ -8,8 +8,8 @@ import (
 func SetupRoutes() *chi.Mux {
     r := chi.NewRouter()
 
-    r.Get("/resource", handlers.HandleGet)
-    r.Post("/resource", handlers.HandlePost)
+    r.Get("/", handlers.HandleGet)
+    r.Post("/", handlers.HandlePost)
 
     return r
 }
