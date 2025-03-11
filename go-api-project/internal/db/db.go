@@ -17,7 +17,16 @@ func Init() {
     }
 
     // AutoMigrate will create the tables, missing foreign keys, constraints, columns and indexes.
-    err = DB.AutoMigrate(&models.User{}, &models.Post{})
+    err = DB.AutoMigrate(
+        &models.User{},
+        &models.Post{},
+        &models.Follower{},
+        &models.Like{},
+        &models.Member{},
+        &models.Comment{},
+        &models.Discussion{},
+        &models.Message{},
+    )
     if err != nil {
         log.Fatalf("Error migrating the database: %v", err)
     }
