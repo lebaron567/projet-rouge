@@ -24,3 +24,46 @@ type Post struct {
     Content   string `json:"content"`
     IsStory   bool   `json:"isstory_post"`
 }
+
+// Follower represents a follower relationship between users.
+type Follower struct {
+    ID       uint `gorm:"primaryKey"`
+    UserID   uint `json:"id_user"`
+    FollowerID uint `json:"id_folower"`
+}
+
+// Like represents a like on a post or comment.
+type Like struct {
+    ID        uint `gorm:"primaryKey"`
+    PostID    uint `json:"id_post"`
+    UserID    uint `json:"id_user"`
+    CommentID uint `json:"id_comment"`
+}
+
+// Member represents a member of a discussion.
+type Member struct {
+    ID           uint `gorm:"primaryKey"`
+    UserID       uint `json:"id_user"`
+    DiscussionID uint `json:"id_discussion"`
+}
+
+// Comment represents a comment made by a user.
+type Comment struct {
+    gorm.Model
+    UserID  uint   `json:"id_user"`
+    Content string `json:"content_comment"`
+}
+
+// Discussion represents a discussion between users.
+type Discussion struct {
+    gorm.Model
+    Name string `json:"name_discussion"`
+}
+
+// Message represents a message sent in a discussion.
+type Message struct {
+    gorm.Model
+    UserID       uint   `json:"id_user"`
+    DiscussionID uint   `json:"id_discussion"`
+    Content      string `json:"content_message"`
+}
