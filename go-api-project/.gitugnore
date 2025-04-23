@@ -16,4 +16,4 @@ go.work
 *.mob
 *.sum
 
-*.db
+message.db
